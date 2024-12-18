@@ -1,0 +1,516 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    line-height: 1.6;
+    position: relative;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fondo de estrellas */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://cdn.pixabay.com/photo/2016/11/23/14/45/sky-1853477_960_720.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    transition: padding 0.3s ease;
+    background-color: #000; /* Fondo negro */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* Texto blanco */
+    transition: color 0.3s ease;
+}
+
+nav .logo img {
+    width: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    color: #fff; /* Texto blanco */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: transparent; /* Fondo transparente */
+}
+
+nav .nav-links a:hover {
+    color: #FFD700; /* Hover con color dorado */
+    position: relative;
+    transform: scale(1.1);
+    background-color: rgba(255, 215, 0, 0.2); /* Fondo dorado al hacer hover */
+}
+
+nav .nav-links a::after {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+nav .nav-links a:hover::after {
+    opacity: 1;
+}
+
+/* Hero Section */
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    transition: padding 0.3s ease;
+}
+
+.hero-text {
+    max-width: 600px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Texto blanco */
+    white-space: nowrap;
+    animation: typing 5s steps(50) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    transition: font-size 0.3s ease;
+}
+
+.btn {
+    background-color: #fff;
+    padding: 10px 20px;
+    color: #111; /* Texto oscuro en el botón */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FFD700; /* Hover con color dorado */
+    transform: scale(1.1);
+}
+
+/* Características */
+#features {
+    padding: 60px 20px;
+    background-color: #000; /* Fondo negro */
+    text-align: center;
+    transition: padding 0.3s ease;
+}
+
+#features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Texto blanco */
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.feature {
+    max-width: 250px;
+    text-align: center;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature i {
+    font-size: 3rem;
+    color: #fff; /* Iconos blancos */
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff; /* Texto blanco */
+}
+
+.feature p {
+    font-size: 1.1rem;
+    color: #fff; /* Texto blanco */
+}
+
+/* Acerca de */
+#about {
+    padding: 60px 20px;
+    background-color: #000; /* Fondo negro */
+    text-align: center;
+    transition: padding 0.3s ease;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Texto blanco */
+}
+
+#about p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #fff; /* Texto blanco */
+}
+
+.about-images img {
+    width: 45%;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.about-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #000; /* Fondo negro */
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff; /* Texto blanco */
+    position: relative;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+footer .footer-content .footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #FFD700; /* Logo dorado */
+}
+
+footer .footer-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ccc; /* Texto gris */
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+footer .social-icons a {
+    color: #fff; /* Iconos sociales blancos */
+    font-size: 1.8rem;
+}
+
+footer .social-icons a:hover {
+    color: #FFD700; /* Hover dorado */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    nav .logo {
+        font-size: 1.3rem;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    nav .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    header {
+        padding: 0 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    #features .features-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-images img {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer .footer-content .footer-logo {
+        font-size: 1.5rem;
+    }
+
+    footer .social-icons {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .feature i {
+        font-size: 2.5rem;
+    }
+
+    .feature h3 {
+        font-size: 1.5rem;
+    }
+
+    .feature p {
+        font-size: 1rem;
+    }
+}
+
+/* Efecto de partículas (estrella) */
+@keyframes star-particles {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    animation: star-particles 3s ease-in-out infinite;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.star:nth-child(1) {
+    top: 20%;
+    left: 50%;
+    animation-delay: -0.5s;
+}
+
+.star:nth-child(2) {
+    top: 60%;
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.star:nth-child(3) {
+    top: 30%;
+    left: 80%;
+    animation-delay: -1s;
+}
+
+.star:nth-child(4) {
+    top: 70%;
+    left: 40%;
+    animation-delay: 0.6s;
+}
+
+.star:nth-child(5) {
+    top: 80%;
+    left: 10%;
+    animation-delay: -0.3s;
+}
+/* Estilo para la sección de contacto */
+#contact {
+    padding: 60px 20px;
+    background-color: #000; /* Fondo negro */
+    text-align: center;
+    transition: padding 0.3s ease;
+}
+
+/* Estilo del formulario */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo de los grupos de campos */
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo de las etiquetas */
+.contact-form label {
+    font-size: 1.2rem;
+    color: #fff; /* Texto blanco */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Estilo de los campos de entrada y área de texto */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo del campo de texto al pasar el ratón */
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: #444; /* Fondo más claro cuando está enfocado */
+}
+
+/* Estilo del botón de envío */
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD700; /* Color dorado */
+    border: none;
+    color: #111; /* Texto oscuro */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilo del botón de envío al pasar el ratón */
+.contact-form button:hover {
+    background-color: #FFC107; /* Hover dorado más brillante */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #contact {
+        padding: 40px 15px;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form input, .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem;
+    }
+}

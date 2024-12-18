@@ -1,0 +1,139 @@
+:root {
+    --primary-color: rgb(0, 174, 255);
+    --background-color: #000;
+    --section-background: #111;
+    --text-color: #fff;
+    --button-hover: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.container {
+    background-color: var(--section-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #222;
+    color: var(--text-color);
+}
+
+button {
+    padding: 10px;
+    background-color: transparent;
+    color: #fffbfb;
+    border-color: aqua;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    color: black;
+    background-color: white;
+    transition: all 1.1s ease-in-out;
+    transform: scale(1.1);  /* Aumenta el tamaño del botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Agrega una sombra */
+    border-radius: 12px;  /* Redondea los bordes */
+    opacity: 0.8;  /* Reduce la opacidad */
+}
+
+
+#results {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-button {
+    display: none;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+.result-button i {
+    margin-right: 10px;
+}
+
+.result-button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Estilos para las partículas */
+#stars, #stars2, #stars3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: transparent;
+}
+
+#stars:after, #stars2:after, #stars3:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 50s linear infinite;
+}
+
+#stars2:after {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 100s linear infinite;
+}
+
+#stars3:after {
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 150s linear infinite;
+}
+
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}

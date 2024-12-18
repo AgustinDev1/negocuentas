@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cambio</title>
+    <!-- Vinculamos los estilos CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Vinculamos Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Fondo con estrellas -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <!-- Título y Descripción del Software -->
+        <header>
+            <h1>Calculadora de Cambio</h1>
+            <p>Calcula el cambio exacto en segundos con nuestra herramienta fácil de usar. Solo ingresa el precio del producto y el monto recibido.</p>
+            <a href="#calculator-form" class="btn">Usar Calculadora</a>
+        </header>
+
+        <!-- Formulario de la Calculadora -->
+        <section id="calculator-form">
+            <h2>Calculadora de Cambio</h2>
+            <form id="calculator-form-content">
+                <label for="product-price">Precio del Producto (ARS):</label>
+                <input type="number" id="product-price" required placeholder="Ejemplo: 1500">
+                
+                <label for="amount-given">Monto Recibido (ARS):</label>
+                <input type="number" id="amount-given" required placeholder="Ejemplo: 2000">
+                
+                <button type="submit">Calcular</button>
+            </form>
+            
+            <!-- Resultados -->
+            <div id="results">
+                <button id="total-result" class="result-button">
+                    <i class="fas fa-tag"></i> Monto del Producto Vendido: ARS <span id="total-amount"></span>
+                </button>
+                <button id="change-result" class="result-button">
+                    <i class="fas fa-money-bill-wave"></i> Cambio: ARS <span id="change-amount"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Información adicional -->
+        <section id="about">
+            <h2>¿Por qué elegir nuestra calculadora?</h2>
+            <p>Nuestra herramienta te permite calcular rápidamente el cambio necesario al realizar una venta, ahorrando tiempo y evitando errores. Es ideal para comerciantes, emprendedores y cualquier persona que necesite hacer cálculos de cambio de forma precisa y eficiente.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Calculadora de Cambio | Todos los derechos reservados</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" class="fab fa-facebook"></a>
+                <a href="https://twitter.com" class="fab fa-twitter"></a>
+                <a href="https://linkedin.com" class="fab fa-linkedin"></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Vinculamos el archivo JavaScript -->
+    <script src="index.js"></script>
+</body>
+</html>
